@@ -1,0 +1,45 @@
+server:
+  port:
+
+spring:
+  rabbitmq:
+    host:
+    port:
+    username:
+    password:
+    exception-handler:
+      default-exchange:
+      queues:
+        bot-queues:
+          name:
+          durable:
+          routing-key:
+
+logging:
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+  file:
+    name:
+  level:
+    org.springframework.web: ERROR
+    org.hibernate: ERROR
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone:
+  instance:
+    hostname:
+
+
+
+telegram:
+  bot:
+    username:
+    botToken:
+    webHookPath:
+    channel-chat-id:
+    group-id:

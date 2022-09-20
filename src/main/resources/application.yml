@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: EXCEPTION-HANDLER-SERVICE
+  profiles:
+    #    active: dev
+    active: prod
+#
+#
+service:
+  username: usernameExceptionHandlerService
+
