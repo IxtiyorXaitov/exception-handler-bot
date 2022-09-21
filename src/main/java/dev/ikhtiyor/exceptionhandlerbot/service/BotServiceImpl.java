@@ -88,7 +88,7 @@ public class BotServiceImpl implements BotService {
 
             char character = errorMessage.charAt(i);
 
-            if (character == '_') {
+            if (character == '_' || character == ' ') {
                 continue;
             }
 
