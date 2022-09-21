@@ -30,8 +30,15 @@ public class BotServiceImpl implements BotService {
 
         String message = messageDTO.getMessage();
 
-        StrBuilder str = new StrBuilder();
+        boolean isUppercase = checkAllCharacterIsUppercase(message);
 
+        if (isUppercase) {
+            return;
+        }
+
+        StrBuilder str = new StrBuilder();
+        str.append("Bug 🪲");
+        str.append("\n");
         str.append("<b>MESSAGE:</b> \n");
         str.append(message);
         str.append("\n");
@@ -68,6 +75,31 @@ public class BotServiceImpl implements BotService {
         sendMessage.setParseMode(ParseMode.HTML);
 
         telegramBot.sendMessage(sendMessage);
+    }
+
+
+    private boolean checkAllCharacterIsUppercase(String errorMessage) {
+
+        boolean isCharacter = false;
+
+        int length = errorMessage.length();
+
+        for (int i = 0; i < length; i++) {
+
+            char character = errorMessage.charAt(i);
+
+            if (character == '_') {
+                continue;
+            }
+
+            if (Character.isUpperCase(character)) {
+                isCharacter = true;
+            } else {
+                isCharacter = false;
+                break;
+            }
+        }
+        return isCharacter;
     }
 
 }
