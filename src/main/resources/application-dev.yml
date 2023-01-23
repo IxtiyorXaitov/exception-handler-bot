@@ -15,14 +15,14 @@ spring:
           durable:
           routing-key:
 
-logging:
-  pattern:
-    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
-  file:
-    name:
-  level:
-    org.springframework.web: ERROR
-    org.hibernate: ERROR
+#logging:
+#  pattern:
+#    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+#  file:
+#    name:
+#  level:
+#    org.springframework.web: ERROR
+#    org.hibernate: ERROR
 
 
 eureka:

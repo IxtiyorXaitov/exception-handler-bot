@@ -16,9 +16,11 @@ public class RabbitMQListener {
 
     @RabbitListener(queues = "exceptionHandler.bot-queue")
     public void receivedMessage(MessageDTO messageDTO) {
-        log.info("messageDTO {}", messageDTO);
-
-        botService.sendMessageToTelegramGroup(messageDTO);
+        try {
+            botService.sendMessageToTelegramGroup(messageDTO);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 

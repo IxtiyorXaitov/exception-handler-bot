@@ -30,12 +30,6 @@ public class BotServiceImpl implements BotService {
 
         String message = messageDTO.getMessage();
 
-        boolean isUppercase = checkAllCharacterIsUppercase(message);
-
-        if (isUppercase) {
-            return;
-        }
-
         StrBuilder str = new StrBuilder();
         str.append("Bug 🪲");
         str.append("\n");

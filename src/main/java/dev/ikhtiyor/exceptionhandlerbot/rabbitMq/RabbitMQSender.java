@@ -13,11 +13,7 @@ public class RabbitMQSender {
     private final RabbitTemplate rabbitTemplate;
 
     private void send(String exchange, String routingKey, Object message) {
-        log.info("Start queueing: Exchange = {}, RoutingKey = {}, Message = {}", exchange, routingKey, message.toString());
-
         rabbitTemplate.convertAndSend(exchange, routingKey, message);
-
-        log.info("End queueing: Exchange = {}, RoutingKey = {}, Message = {}", exchange, routingKey, message.toString());
     }
 
 }
